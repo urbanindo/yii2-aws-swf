@@ -12,7 +12,7 @@ cache:
     - $HOME/.composer/cache/files
 
 before_script:
-  - ./vendor/bin/phpcs src/
+  - ./vendor/bin/phpcs --standard=ruleset.xml src/
 
 script:
   - ./vendor/bin/phpunit --coverage-clover 'reports/clover.xml'
