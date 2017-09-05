@@ -11,6 +11,9 @@ cache:
   directories:
     - $HOME/.composer/cache/files
 
+before_script:
+  - ./vendor/bin/phpcs src/
+
 script:
   - ./vendor/bin/phpunit --coverage-clover 'reports/clover.xml'
 
@@ -19,4 +22,4 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
